@@ -441,6 +441,6 @@ def validate_json_format(comment: str) -> bool:
 
 ## Контакты
 
-- **Документация:** https://github.com/omr/repOWR
-- **Telegram:** @omr_reputation
-- **Email:** rep@omr.world
+- **Документация:** https://github.com/shurik51rus/repOWR
+- **Telegram:**  https://t.me/repOWR_protocol
+
