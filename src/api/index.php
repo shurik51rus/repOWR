@@ -46,7 +46,7 @@ try {
 function getProfile($db, $address) {
     // Берём последний профиль для этого адреса
     $stmt = $db->prepare("
-        SELECT nickname, bio, avatar, skills, location, links
+        SELECT nickname, bio, avatar, skills, languages, nationality, affiliation, birth_year, location, links
         FROM profiles
         WHERE address = ?
         ORDER BY id DESC
@@ -85,11 +85,7 @@ function getReputation($db, $address) {
     $avg   = $row['avg_rating'] ? round((float)$row['avg_rating'], 2) : 0;
     $total = (int)$row['total_ratings'];
 
-    // Итоговый балл: среднее × логарифм количества (чем больше отзывов, тем выше вес)
-    $final = $total > 0 ? round($avg * log($total + 1), 2) : 0;
-
     return [
-        'final_score'   => $final,
         'avg_rating'    => $avg,
         'total_ratings' => $total,
         'ratings_given' => (int)$given['ratings_given'],
@@ -190,12 +186,10 @@ try {
             foreach ($users as $user) {
                 $avg   = round((float)$user['avg_rating'], 2);
                 $total = (int)$user['total_ratings'];
-                $final = round($avg * log($total + 1), 2);
 
                 $data = [
                     'address'    => $user['address'],
                     'reputation' => [
-                        'final_score'   => $final,
                         'avg_rating'    => $avg,
                         'total_ratings' => $total,
                     ]
@@ -208,7 +202,7 @@ try {
             }
 
             // Сортируем по итоговому баллу
-            usort($result, fn($a, $b) => $b['reputation']['final_score'] <=> $a['reputation']['final_score']);
+            usort($result, fn($a, $b) => $b['reputation']['avg_rating'] <=> $a['reputation']['avg_rating']);
 
             echo json_encode(['success' => true, 'data' => $result], JSON_UNESCAPED_UNICODE);
             break;
