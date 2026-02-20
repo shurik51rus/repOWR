@@ -99,6 +99,7 @@ JSON-формат для создания децентрализованного
   "skills": ["python", "ton", "design"],
   "languages": ["ru", "en"],
   "nationality": "OMR",
+  "affiliation": "OMR",
   "birth_year": 1995,
   
   "links": {
@@ -122,7 +123,8 @@ JSON-формат для создания децентрализованного
 | `bio` | string | ✅ Да | Краткое описание (до 200 символов) |
 | `skills` | array | ❌ Нет | Список навыков/компетенций (до 10 элементов, каждый до 30 символов) |
 | `languages` | array | ❌ Нет | Языки (ISO коды: `"ru"`, `"en"`, `"zh"` и т.д., до 10) |
-| `nationality` | string | ❌ Нет | Страна или микронация (до 50 символов) |
+| `nationality` | string | ❌ Нет | Устаревшее. Страна или микронация (до 50 символов) |
+| `affiliation` | string | ❌ Нет | Принадлежность: страна, компания, DAO, микронация, сообщество (до 50 символов) |
 | `birth_year` | integer | ❌ Нет | Год рождения (только год, для приватности) |
 | `links` | object | ❌ Нет | Социальные сети и сайты (до 10 ссылок) |
 | `location` | string | ❌ Нет | Город/регион проживания (до 50 символов) |
@@ -209,6 +211,7 @@ JSON-формат для создания децентрализованного
   "skills": ["solidity", "typescript", "ton", "react"],
   "languages": ["ru", "en"],
   "nationality": "Russia",
+  "affiliation": "Russia",
   "birth_year": 1992,
   "links": {
     "telegram": "@cryptodevpro",
@@ -442,4 +445,3 @@ def validate_json_format(comment: str) -> bool:
 
 - **Документация:** https://github.com/shurik51rus/repOWR
 - **Telegram:**  https://t.me/repOWR_protocol
-
