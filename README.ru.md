@@ -110,7 +110,7 @@ repOWR/
 
 - **Сайт:** https://repowr.tech
 - **Telegram-бот:** https://t.me/RepOracle_bot
-- **Telegram сообщество:** t.me/repOWR_protocol
+- **Telegram сообщество:** https://t.me/repOWR_protocol
 - **Документация протокола:** [docs/protocol.md](docs/protocol.md)
 
 ## Лицензия
