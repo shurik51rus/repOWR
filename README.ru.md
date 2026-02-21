@@ -61,7 +61,7 @@ repOWR:5:Отличный сервис, быстрая доставка:
 | Стандарт | Jetton (TEP-74) |
 | Общая эмиссия | 100,000,000 SPW |
 | Jetton Master | `EQABi71g1y3BFnxA_qcY-giSbtRx9gArA9xXpfeZyTqP_Jwh` |
-| DEX | [STON.fi](https://app.ston.fi) |
+| DEX | [STON.fi]([https://app.ston.fi](https://app.ston.fi/swap?ft=TON&tt=EQABi71g1y3BFnxA_qcY-giSbtRx9gArA9xXpfeZyTqP_Jwh&chartVisible=false)) |
 
 ## Структура репозитория
 
